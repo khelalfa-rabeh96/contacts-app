@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
-
+import PropTypes from 'prop-types';
 class ListContacts extends Component {
-    
+        static propTypes = {
+          contacts: PropTypes.array.isRequired,
+          onDeleteContact: PropTypes.func.isRequired,
+        }
+
         render (){
 
           return (
