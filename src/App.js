@@ -31,7 +31,14 @@ class App extends Component {
 
   }
 
-
+   createContact =(contact) => {
+     ContactAPI.create(contact)
+     .then((contact) => {
+       this.setState((currentState) => ({
+         contacts: [...currentState.contacts, contact]
+       }))
+     })
+   }
 
   render() {
     return (
@@ -44,7 +51,13 @@ class App extends Component {
 
         )} />
        
-       <Route exact path="/create" component={CreateContact}/>
+       <Route exact path="/create" render={({ history }) => (
+         <CreateContact onCreateContact={(contact) => {
+           this.createContact(contact)
+           history.push('/')
+
+         }} />
+         )} />
       
       </div>
     );
@@ -54,6 +67,10 @@ class App extends Component {
 ListContacts.propTypes = {
   contacts: PropTypes.array.isRequired,
   onDeleteContact: PropTypes.func.isRequired,
+}
+
+CreateContact.propTypes = {
+  onCreateContact: PropTypes.func.isRequired,
 }
 
 export default App;
