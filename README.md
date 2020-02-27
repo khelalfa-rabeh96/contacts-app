@@ -1,4 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The Goal Of this App
+
+This Project is for practicing the fundamentals of react 
+(Component, Functional Component ,Props, State, Router, PropTypes, Lifecycle Events)
+
+## What our App Do 
+
+Display a list of contacts, each contact have name, handler and an picture. <br>
+
+Add Contact. <br>
+Delete Contact. <br>
+Search for  Contact. <br>
+Making api request for data. <br>
+
+## Backend
+This application need a server side to request for add, delete, display contacts. <br>
+You can implement your own server for this app.
+
 
 ## Available Scripts
 
